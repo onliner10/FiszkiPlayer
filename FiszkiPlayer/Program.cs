@@ -22,7 +22,7 @@ namespace FiszkiPlayer
 
             var waveOutDevice = new WaveOut();
 
-            var idToFile = Directory.GetFiles(mp3FilesDir, "*.mp3", SearchOption.AllDirectories).ToDictionary(k => int.Parse(Regex.Match(Path.GetFileName(k), @"\d+").Value));
+            var idToFile = Directory.GetFiles(mp3FilesDir, "*.mp3", SearchOption.AllDirectories).ToDictionary(k => int.Parse(Regex.Match(Path.GetFileName(k), @"^\d+").Value));
             while (true)
             {
                 Console.WriteLine("Wprowadz numer nagrania");
